@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV GLOBAL MARINE - Marine Offshore Supplier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <style>
+      :root {
+        --primary-color: #10374a;
+        --secondary-color: #1c6e8c;
+        --accent-color: #ff6347;
+        --text-color: #333;
+        --light-bg: #f8f9fa;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .navbar {
+        background-color: var(--primary-color);
+        padding: 0.5rem 1rem;
+      }
+
+      .navbar-brand img {
+        max-height: 40px;
+        width: auto;
+      }
+
+      .navbar-brand .sitename {
+        color: #fff;
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        font-weight: 700;
+        margin-left: 10px;
+      }
+
+      .navbar-nav .nav-link {
+        color: #fff !important;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        padding: 0.5rem 1rem;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: var(--accent-color) !important;
+      }
+
+      .header-social-links a {
+        color: #fff;
+        margin-left: 15px;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+      }
+
+      .header-social-links a:hover {
+        color: var(--accent-color);
+      }
+
+      #hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://dzuhribgr.github.io/global-marine/global-marine-bg-1.png') no-repeat center center;
+        background-size: cover;
+        color: #fff;
+        padding: 5rem 0;
+        text-align: center;
+      }
+
+      #hero h2 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      #hero p {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        margin-bottom: 30px;
+      }
+
+      .btn-get-started {
+        background-color: var(--accent-color);
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-get-started:hover {
+        background-color: #e76f51;
+        color: #fff;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .section-title p {
+        font-size: clamp(1rem, 2vw, 1.1rem);
+        color: #777;
+      }
+
+      .service-card {
+        background-color: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 2rem;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        padding-top: 20px;
+      }
+
+      .service-card .card-body {
+        padding: 20px;
+      }
+
+      .service-card .card-title {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .contact-info i {
+        color: var(--secondary-color);
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+
+      footer {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 3rem 0 1rem;
+      }
+
+      footer h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      footer a {
+        color: #ddd;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: var(--accent-color);
+        text-decoration: none;
+      }
+
+      #scroll-top {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background-color: var(--accent-color);
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        display: none;
+      }
+
+      #scroll-top:hover {
+        background-color: var(--secondary-color);
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: var(--primary-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        background-color: white;
+        border: 4px solid var(--accent-color);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        left: 50%;
+      }
+
+      .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid var(--primary-color);
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent var(--primary-color);
+      }
+
+      .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid var(--primary-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--primary-color) transparent transparent;
+      }
+
+      .right::after {
+        left: -16px;
+      }
+
+      .timeline-content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .cert-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .cert-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .cert-icon {
+        font-size: 3rem;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+      }
+
+      .cert-card h4 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .navbar-nav {
+          background-color: var(--primary-color);
+          padding: 1rem;
+        }
+
+        .header-social-links {
+          margin-top: 1rem;
+        }
+
+        #hero {
+          padding: 3rem 0;
+        }
+
+        .section {
+          padding: 3rem 0;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .navbar-brand .sitename {
+          font-size: 1rem;
+        }
+
+        #hero h2 {
+          font-size: 2rem;
+        }
+
+        #hero p {
+          font-size: 1rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="https://dzuhribgr.github.io/global-marine/global-marine-cv-putih-51x51.png" alt="GLOBAL MARINE Logo">
+          <span class="sitename">CV GLOBAL MARINE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#hero">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> About Us </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#about">Company Overview</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#vision-mission">Vision & Mission</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#history">Our History</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#certifications">Certifications</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products & Services </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <li>
+                  <a class="dropdown-item" href="#services">Our Services</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#supplies">Supplies</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#customers">Customers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="header-social-links d-none d-lg-flex">
+          <a href="#" class="twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="#" class="facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" class="instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="linkedin">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <header id="hero" class="d-flex align-items-center">
+      <div class="container">
+        <h2>Welcome to CV GLOBAL MARINE</h2>
+        <p class="lead">Indonesia's Premier Marine and Offshore Supply Solutions</p>
+        <a href="#contact" class="btn btn-get-started">Contact Us</a>
+      </div>
+    </header>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>Discover the excellence of CV GLOBAL MARINE</p>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p>CV GLOBAL MARINE is a leading marine logistics provider and ship chandler, offering comprehensive services across all Indonesian ports. Licensed for shipping logistics in Indonesia, we provide unparalleled information and services for global marine logistics, ensuring your operations run smoothly and efficiently.</p>
+            <p>With years of experience and a commitment to excellence, we have established ourselves as a trusted partner in the marine industry. Our expertise spans from ship supplies to logistic services, always prioritizing quality and reliability.</p>
+          </div>
+          <div class="col-lg-6">
+            <img src="https://dzuhribgr.github.io/global-marine/global-marine-bg-2.png" alt="Offshore Operations" class="img-fluid rounded shadow">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="vision-mission" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Vision & Mission</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <h3>Vision</h3>
+            <p>To be the leading and most trusted marine offshore supplier in Indonesia, providing world-class services and products to our global clients.</p>
+          </div>
+          <div class="col-lg-6">
+            <h3>Mission</h3>
+            <ul>
+              <li>Deliver high-quality marine supplies and services that exceed customer expectations</li>
+              <li>Maintain the highest standards of safety and environmental responsibility</li>
+              <li>Continuously innovate and improve our processes and offerings</li>
+              <li>Invest in our people and foster a culture of excellence and integrity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="history" class="section bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Journey</h2>
+          <p>Milestones that shaped CV GLOBAL MARINE</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>2005</h3>
+              <p>Founded in Jakarta with a vision to revolutionize marine supplies</p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>2010</h3>
+              <p>Expanded operations to cover all major Indonesian ports</p>
+            </div>
+          </div>
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>2015</h3>
+              <p>Achieved ISO 9001:2015 certification for quality management</p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>2020</h3>
+              <p>Launched comprehensive online ordering system for clients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>Comprehensive solutions for all your marine needs</p>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="service-card">
+              <img src="https://dzuhribgr.github.io/global-marine/cabin-stores-items-GM.png" alt="cabin store">
+              <div class="card-body">
+                <h5 class="card-title">CABIN STORE</h5>
+                <p class="card-text">Premium cabin supplies ensuring comfort and efficiency for marine crews</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="service-card">
+              <img src="https://dzuhribgr.github.io/global-marine/deck-store-GM.png" alt="deck store">
+              <div class="card-body">
+                <h5 class="card-title">DECK STORE</h5>
+                <p class="card-text">Comprehensive deck equipment and maintenance supplies for optimal vessel performance</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="service-card">
+              <img src="https://dzuhribgr.github.io/global-marine/electric-store-GM.png" alt="electric store">
+              <div class="card-body">
+                <h5 class="card-title">ELECTRIC STORE</h5>
+                <p class="card-text">State-of-the-art electrical components and systems for marine applications</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="service-card">
+              <img src="https://dzuhribgr.github.io/global-marine/food-provision-store-GM.png" alt="food provision">
+              <div class="card-body">
+                <h5 class="card-title">FOOD PROVISION</h5>
+                <p class="card-text">Providing essential food provisions for marine and offshore operations.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="service-card">
+              <img src="https://dzuhribgr.github.io/global-marine/office-stationary-GM.png" alt="office stationary">
+              <div class="card-body">
+                <h5 class="card-title">OFFICE STATIONARY</h5>
+                <p class="card-text">High-quality office supplies tailored for marine environments.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="service-card">
+              <img src="https://dzuhribgr.github.io/global-marine/safety-equipment-GM.png" alt="safety equipment">
+              <div class="card-body">
+                <h5 class="card-title">SAFETY EQUIPMENT</h5>
+                <p class="card-text">Top-tier safety equipment for marine and offshore operations, prioritizing crew safety.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Certifications</h2>
+          <p>Ensuring quality and compliance in all our operations</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4">
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h4>ISO 9001:2015</h4>
+              <p>Quality Management System</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class="fas fa-hard-hat"></i>
+              </div>
+              <h4>OHSAS 18001</h4>
+              <p>Occupational Health and Safety Management</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class="fas fa-ship"></i>
+              </div>
+              <h4>IMO Compliant</h4>
+              <p>International Maritime Organization Standards</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Food Provision Section -->
+    <section id="provision" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Marine Supplies Showcase</h2>
+          <p>Explore our diverse range of high-quality marine products</p>
+        </div>
+        <p class="text-center mb-4">Discover the extensive selection of marine supplies we offer to meet all your offshore needs</p>
+        <div class="row">
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/ban-GM.png" alt="ban" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/baterai-GM.png" alt="baterai" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/baut-GM.png" alt="baut" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/brushes-GM.png" alt="brushes" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/electric-GM.png" alt="electric" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/handheld-flame-GM.png" alt="gandle" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/gasket-GM.png" alt="gasket" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/gate-valve-GM.png" alt="valve" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/helmet-GM.png" alt="helmet" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/hydrostatic-GM.png" alt="hydrostatic" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/jarum-keras-GM.png" alt="jarum" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/kacamata-GM.png" alt="kacamata" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/karpet-GM.png" alt="karpet" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/kaus-tangan-GM.png" alt="kaus-tangan" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/kunci-sock-GM.png" alt="sock" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/mata-gerinda-GM.png" alt="gerinda" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/oil-GM.png" alt="oil" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/pelampung-GM.png" alt="pelampung" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/pemadam-GM.png" alt="pemadam" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/pita-ukur-GM.png" alt="pita-ukur" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/plastic-steel-GM.png" alt="plastic" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/roller-GM.png" alt="roller" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/ruber-scupper-GM.png" alt="ruber" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/rush-remover-GM.png" alt="remover" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/sealent-GM.png" alt="sealent" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/sepatu-GM.png" alt="shoes" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/skiing-water-GM.png" alt="skiing" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/tambang-GM.png" alt="tambang" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/three-bond-GM.png" alt="bond" class="img-fluid rounded shadow">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Supplies Section -->
+    <section id="supplies" class="section bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Supplies</h2>
+          <p>Comprehensive range of marine supplies</p>
+        </div>
+        <p class="text-center mb-4">Our comprehensive range of services includes:</p>
+        <div class="row">
+          <div class="col-lg-6">
+            <ol class="list-group list-group-numbered shadow">
+              <li class="list-group-item">High-quality provisions and catering services with ISO-standard packaging</li>
+              <li class="list-group-item">New vessel construction, motor repairs, workshop services, and marine painting</li>
+              <li class="list-group-item">CO2 systems and life raft servicing</li>
+              <li class="list-group-item">Safety Lubricants & Calibrations</li>
+              <li class="list-group-item">Refilling of Oxygen, Acetylene & Freon Gases</li>
+              <li class="list-group-item">Stores (Engine, Electrical, Deck/Medical)</li>
+              <li class="list-group-item">Cabin Store</li>
+              <li class="list-group-item">Nautical charts and navigation publications</li>
+              <li class="list-group-item">Rental Air Tugger Winch</li>
+            </ol>
+          </div>
+          <div class="col-lg-6">
+            <img src="https://dzuhribgr.github.io/global-marine/global-marine-bg-3.png" alt="Ship at port" class="img-fluid rounded shadow">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Customers Section -->
+    <section id="customers" class="section bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Customers</h2>
+          <p>Trusted by leading companies in the marine industry</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-2 col-4 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/cho.png" alt="CHO" class="img-fluid rounded-circle shadow customer-logo">
+          </div>
+          <div class="col-md-2 col-4 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/dbs.png" alt="DBS" class="img-fluid rounded-circle shadow customer-logo">
+          </div>
+          <div class="col-md-2 col-4 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/grsm.png" alt="GRSM" class="img-fluid rounded-circle shadow customer-logo">
+          </div>
+          <div class="col-md-2 col-4 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/limin-marine.png" alt="Limin Marine" class="img-fluid rounded-circle shadow customer-logo">
+          </div>
+          <div class="col-md-2 col-4 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/ssm.png" alt="SSM" class="img-fluid rounded-circle shadow customer-logo">
+          </div>
+          <div class="col-md-2 col-4 mb-4">
+            <img src="https://dzuhribgr.github.io/global-marine/synergy-group.png" alt="Synergy Group" class="img-fluid rounded-circle shadow customer-logo">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Get in touch with our expert team</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <form class="contact-form">
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Your Email" required>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn-get-started">Send Message</button>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Jl. Baru Gg, 2 No.8, Kelurahan Cilincing, Jakarta Utara, JAKARTA, INDONESIA
+              </p>
+              <p>
+                <i class="fas fa-phone"></i> +62 21 2243 7801
+              </p>
+              <p>
+                <i class="fas fa-envelope"></i> globalmarinepriuk@yahoo.com
+              </p>
+            </div>
+            <div class="mt-4">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.0378!2d106.9534!3d-6.1234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDcnMjQuNCJTIDEwNsKwNTcnMTIuMiJF!5e0!3m2!1sen!2sid!4v1628000000000!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 footer-info">
+            <img src="https://dzuhribgr.github.io/global-marine/global-marine-cv-putih-256x256.png" alt="CV GLOBAL MARINE Logo" style="max-width: 100px; height: auto; margin-bottom: 10px;">
+            <h3>CV GLOBAL MARINE</h3>
+            <p>Indonesia's Premier Marine and Offshore Supply Solutions</p>
+          </div>
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#hero">Home</a>
+              </li>
+              <li>
+                <a href="#about">About us</a>
+              </li>
+              <li>
+                <a href="#services">Services</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#services">Cabin Store</a>
+              </li>
+              <li>
+                <a href="#services">Deck Store</a>
+              </li>
+              <li>
+                <a href="#services">Food Provision</a>
+              </li>
+              <li>
+                <a href="#services">Safety Equipment</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-12 footer-contact">
+            <h4>Contact Us</h4>
+            <p> Jl. Baru Gg, 2 No.8, Kelurahan Cilincing <br> Jakarta Utara, JAKARTA, INDONESIA <br>
+              <strong>Phone:</strong> +6221-22437801 <br>
+              <strong>Mobile:</strong> +6281-289865224 <br>
+              <strong>Email:</strong> globalmarinepriuk@yahoo.com
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center mt-4">
+        <p>&copy; 2024 CV GLOBAL MARINE. All rights reserved.</p>
+      </div>
+    </footer>
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      // Show/hide scroll-to-top button
+      window.addEventListener('scroll', function() {
+        var scrollToTop = document.getElementById('scroll-top');
+        if (window.pageYOffset > 100) {
+          scrollToTop.style.display = 'flex';
+        } else {
+          scrollToTop.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>
